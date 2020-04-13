@@ -1283,9 +1283,9 @@ if msg.text then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_}, function(arg,data) 
 if redis:get(veer.."chencher"..msg.sender_user_id_) then 
 if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
-zainn = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
-zainm = '['..data.first_name_..']'
-sendMsg(msg.chat_id_,msg.id_,zain[math.random(#zain)])
+rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
+lsaied = '['..data.first_name_..']'
+sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
 end  
 end
 redis:set(veer.."chencher"..msg.sender_user_id_, data.first_name_) 
@@ -1378,9 +1378,9 @@ if msg.text then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_}, function(arg,data) 
 if redis:get(veer.."chencher"..msg.sender_user_id_) then 
 if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
-zainn = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
-zainm = '['..data.first_name_..']'
-sendMsg(msg.chat_id_,msg.id_,zain[math.random(#zain)])
+rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
+lsaied = '['..data.first_name_..']'
+sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
 end  
 end
 redis:set(veer.."chencher"..msg.sender_user_id_, data.first_name_) 
@@ -1390,20 +1390,20 @@ if msg.text then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_}, function(arg,data) 
 if redis:get(veer.."chencher"..msg.sender_user_id_) then 
 if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
-zainn = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
-zainm = '['..data.first_name_..']'
-local zain ={ 
+rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
+lsaied = '['..data.first_name_..']'
+local saied ={ 
 '\n شكو غيرت اسمك  يا حلو 😹🌚',
-'\n شهل اسم الفيطي '..zainm.. ' \n رجعه ؏ قديم \n '..zainn..'',
+'\n شهل اسم الفيطي '..lsaied.. ' \n رجعه ؏ قديم \n '..rsaied..'',
 '\n  ها ها شو غيرت اسمك 🤔😹',
 '\n شكو غيرت اسمك شنو قطيت وحده جديده 😹😹🌚',
 '\n شو غيرت اسمك شنو تعاركت ويه الحب ؟😹🌞',
-'\n ها ولك مو جان  اسمك   '..zainn..'  شكو غيرته ',
-'\n لك تعال تعال مو جان اسمك '..zainn..' لو اني غلطان',
-'\n هذا جان اسمه '..zainn..' خمطو بعد ميريده 😹🌞',
+'\n ها ولك مو جان  اسمك   '..rsaied..'  شكو غيرته ',
+'\n لك تعال تعال مو جان اسمك '..rsaied..' لو اني غلطان',
+'\n هذا جان اسمه '..rsaied..' خمطو بعد ميريده 😹🌞',
 '\n شكو غيرت اسمك شسالفه ؟؟ 🤔🌞'
 }
-sendMsg(msg.chat_id_,msg.id_,zain[math.random(#zain)])
+sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
 end  
 end
 redis:set(veer.."chencher"..msg.sender_user_id_, data.first_name_) 
