@@ -1279,18 +1279,6 @@ sendMsg(msg.chat_id_,msg.id_,'*🎮║((المحيبس))\nء➖➖➖➖➖➖�
 end
 end
 end
-if msg.text then  
-tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_}, function(arg,data) 
-if redis:get(veer.."chencher"..msg.sender_user_id_) then 
-if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
-rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
-lsaied = '['..data.first_name_..']'
-sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
-end  
-end
-redis:set(veer.."chencher"..msg.sender_user_id_, data.first_name_) 
-end,nil) 
-end
 
 
 if redis:get(veer.."SET:t" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
@@ -1380,28 +1368,16 @@ if redis:get(veer.."chencher"..msg.sender_user_id_) then
 if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
 rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
 lsaied = '['..data.first_name_..']'
-sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
-end  
-end
-redis:set(veer.."chencher"..msg.sender_user_id_, data.first_name_) 
-end,nil) 
-end
-if msg.text then  
-tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_}, function(arg,data) 
-if redis:get(veer.."chencher"..msg.sender_user_id_) then 
-if redis:get(veer.."chencher"..msg.sender_user_id_) ~= data.first_name_ then 
-rsaied = '['..(redis:get(veer.."chencher"..msg.sender_user_id_) or '')..']'
-lsaied = '['..data.first_name_..']'
 local saied ={ 
-'\n شكو غيرت اسمك  يا حلو 😹🌚',
-'\n شهل اسم الفيطي '..lsaied.. ' \n رجعه ؏ قديم \n '..rsaied..'',
+'\n شو غيرت اسمك  يا حلو 😹🌚',
+'\n شو هالاسم '..lsaied.. ' \n رجعه ؏ قديم \n '..rsaied..'',
 '\n  ها ها شو غيرت اسمك 🤔😹',
-'\n شكو غيرت اسمك شنو قطيت وحده جديده 😹😹🌚',
-'\n شو غيرت اسمك شنو تعاركت ويه الحب ؟😹🌞',
-'\n ها ولك مو جان  اسمك   '..rsaied..'  شكو غيرته ',
-'\n لك تعال تعال مو جان اسمك '..rsaied..' لو اني غلطان',
-'\n هذا جان اسمه '..rsaied..' خمطو بعد ميريده 😹🌞',
-'\n شكو غيرت اسمك شسالفه ؟؟ 🤔🌞'
+'\n شو غيرت اسمك شو نصبت على واحد جديد 😹😹🌚',
+'\n شو غيرت اسمك شو تقاتلت مع الحب ؟😹🌞',
+'\n مو كان اسمك   '..rsaied..'  ليش غيرته 🤔🌚',
+'\n لك تعال تعال مو كان اسمك '..rsaied..' ولا انا غلطان 🤔🌚',
+'\n هذا كان اسمه '..rsaied..' لقطته بالرادار 😹🌞',
+'\n شو غيرت اسمك شو القصة ؟؟ 🤔🌞'
 }
 sendMsg(msg.chat_id_,msg.id_,saied[math.random(#saied)])
 end  
