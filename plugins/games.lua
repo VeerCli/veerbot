@@ -1253,13 +1253,13 @@ if redis:get(veer.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_) then
 if msg.text:match("^(%d+)$") then
 if tonumber(msg.text:match("^(%d+)$")) > 99999999 then
 sendMsg(msg.chat_id_,msg.id_,"*📬¦ لا تستطيع اضافة اكثر من 99999999 نقاط\n*")   
-redis:del(veer.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(veer.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
 return false  end 
 local GET_IDUSER = redis:get(veer..'SET:ID:USER:NUM'..msg.chat_id_)  
 sendMsg(msg.chat_id_,msg.id_,"\n📬*¦ طكو طكو عمي 😻 تم اضافة له { "..msg.text.." }* نقاط")
 redis:incrby(veer..':User_Points:'..msg.chat_id_..GET_IDUSER,msg.text)  
 end
-redis:del(veer.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(veer.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
 end
 
 if redis:get(veer.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
