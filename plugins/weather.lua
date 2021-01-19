@@ -35,15 +35,15 @@ end
 function run(msg, MsgText)
   if MsgText[1] == '!weather' then
   if not MsgText[2] then
-    text = "!weather (city)"
+    get_weather = "!weather (city)"
     else
-  local text = get_weather(MsgText[2])
-  if not text then
-    text = 'Can\'t get weather from that city.'
+  local get_weather = get_weather(MsgText[2])
+  if not get_weather then
+    get_weather = 'Can\'t get weather from that city.'
   end
   end
   end
-  return sendMsg(msg.chat_id_,msg.id_,text)
+  return sendMsg(msg.chat_id_,msg.id_,get_weather)
 end
 
 return {
