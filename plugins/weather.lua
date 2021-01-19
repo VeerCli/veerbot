@@ -6,7 +6,7 @@ local function get_weather(location)
 
 print("urlw : "..urlw)
   local url, res = http.request(urlw)
-print("url : "..JSON.encode(url).."\nres : "..res)
+print("\nurl : "..JSON.encode(url).."\nres : "..res)
   if res ~= 200 then return "Error" end
   local weather = JSON.decode(url)
   local city = weather.name
