@@ -4,7 +4,6 @@ local function get_weather(location)
   print("Finding weather in "..location)
   local urlw = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
-print("urlw : "..urlw)
   local url, res = http.request(urlw)
 print("\nurl : "..url.."\nres : "..res)
   if res ~= 200 then return "Error" end
