@@ -39,7 +39,7 @@ local function weather(msg, MsgText)
     else
   local get_weather = get_weather(MsgText[2])
   if not get_weather then
-    get_weather = 'Can\'t get weather from that city.'
+    get_weather = "Can't get weather from that city."
   end
   end
   end
