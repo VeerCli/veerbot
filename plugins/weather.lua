@@ -5,7 +5,6 @@ local function get_weather(location)
   local urlw = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
   local url, res = http.request(urlw)
-  print("url : "..url.."\nres : "..res)
   if res == 200 then
   local weather = JSON.decode(url)
   print("\nweather : "..JSON.encode(weather))
@@ -36,12 +35,12 @@ end
 local function weather(msg, MsgText)
   if MsgText[1] == '!weather' then
   if not MsgText[2] then
-    get_weather = "!weather (city)"
+  sendMsg(msg.chat_id_,msg.id_,"!weather (city)")
     else
-  get_weather = get_weather(MsgText[2])
+  sendMsg(msg.chat_id_,msg.id_,get_weather(MsgText[2]))
   end
   end
-  return sendMsg(msg.chat_id_,msg.id_,get_weather)
+  return false
 end
 
 return {
