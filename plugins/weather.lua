@@ -5,10 +5,12 @@ local function get_weather(location)
   local urlw = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
   local url, res = http.request(urlw)
-print("\nurl : "..url.."\nres : "..res)
-  if res ~= 200 then return "Error" end
+  print("\nurl : "..url.."\nres : "..res)
+  if res == 401 then
+  return "Error"
+  end
   local weather = JSON.decode(url)
-print("\nweather : "..JSON.encode(weather))
+  print("\nweather : "..JSON.encode(weather))
   local city = weather.name
   local country = weather.sys.country
   local temp = 'The temperature in '..city
