@@ -6,7 +6,7 @@ local function get_weather(location)
 
   local url, res = http.request(urlw)
   print("\nurl : "..url.."\nres : "..res)
-  if res == 401 then
+  if res ~= 200 then
   return "Error"
   end
   local weather = JSON.decode(url)
