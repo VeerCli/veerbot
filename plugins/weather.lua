@@ -7,7 +7,7 @@ local function get_weather(location)
   url = url..'&units=metric'
   url = url..'&appid=bd82977b86bf27fb59a04b61b657fb6f'
 
-  local b, c, h = http.request(url)
+  local b, c = http.request(url)
   if c ~= 200 then return nil end
 
   local weather = JSON.decode(b)
