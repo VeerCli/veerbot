@@ -4,9 +4,10 @@ local function get_weather(location)
   location = location:gsub(" ","+")
   local urlw = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
+print("urlw : "..urlw)
   local url, res = http.request(urlw)
+print("url : "..JSON.encode(url).."\nres : "..res)
   if res ~= 200 then return "Error" end
-
   local weather = JSON.decode(url)
   local city = weather.name
   local country = weather.sys.country
