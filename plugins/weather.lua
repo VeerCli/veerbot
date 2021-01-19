@@ -1,13 +1,13 @@
 
 local function get_weather(location)
-  print("Finding weather in ", location)
+  print("Finding weather in "..location)
   location = location:gsub(" ","+")
-  local url = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
+  local urlw = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
-  local b, c = http.request(url)
-  if c ~= 200 then return "Error" end
+  local url, res = http.request(urlw)
+  if res ~= 200 then return "Error" end
 
-  local weather = JSON.decode(b)
+  local weather = JSON.decode(url)
   local city = weather.name
   local country = weather.sys.country
   local temp = 'The temperature in '..city
