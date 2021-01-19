@@ -1,5 +1,5 @@
 
-function get_weather(location)
+local function get_weather(location)
   print("Finding weather in ", location)
   location = location:gsub(" ","+")
   local url = "http://api.openweathermap.org/data/2.5/weather"
@@ -32,7 +32,7 @@ function get_weather(location)
   return temp .. '\n' .. conditions
 end
 
-function run(msg, MsgText)
+local function weather(msg, MsgText)
   if MsgText[1] == '!weather' then
   if not MsgText[2] then
     get_weather = "!weather (city)"
@@ -51,6 +51,6 @@ Veer = {
 "^(!weather)$",
 "^(!weather) (.*)$",
  },
- iVeer = run,
+ iVeer = weather,
  }
  
