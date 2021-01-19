@@ -7,7 +7,6 @@ local function get_weather(location)
   local url, res = http.request(urlw)
   if res == 200 then
   local weather = JSON.decode(url)
-  print("\nweather : "..JSON.encode(weather))
   local city = weather.name
   local country = weather.sys.country
   local temp = 'The temperature in '..city
@@ -27,7 +26,6 @@ local function get_weather(location)
   end
   return temp .. '\n' .. conditions
 else
-  print("Error")
   return "Can't get weather from that city."
 end
 end
