@@ -28,7 +28,7 @@ local function get_weather(location)
   return temp .. '\n' .. conditions
 else
   print("Error")
-  return "Error"
+  return "Can't get weather from that city."
 end
 end
 
