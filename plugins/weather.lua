@@ -5,7 +5,7 @@ local function get_weather(location)
   local url = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
   local b, c = http.request(url)
-  if c ~= 200 then return nil end
+  if c ~= 200 then return "Error" end
 
   local weather = JSON.decode(b)
   local city = weather.name
