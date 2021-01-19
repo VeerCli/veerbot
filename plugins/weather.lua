@@ -38,10 +38,7 @@ local function weather(msg, MsgText)
   if not MsgText[2] then
     get_weather = "!weather (city)"
     else
-  local get_weather = get_weather(MsgText[2])
-  if not get_weather then
-    get_weather = "Can't get weather from that city."
-  end
+  get_weather = get_weather(MsgText[2])
   end
   end
   return sendMsg(msg.chat_id_,msg.id_,get_weather)
