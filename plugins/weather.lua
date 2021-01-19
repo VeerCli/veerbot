@@ -10,7 +10,7 @@ local function get_weather(location)
   local b, c, h = http.request(url)
   if c ~= 200 then return nil end
 
-  local weather = json:decode(b)
+  local weather = JSON.decode(b)
   local city = weather.name
   local country = weather.sys.country
   local temp = 'The temperature in '..city
