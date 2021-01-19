@@ -40,7 +40,7 @@ local function weather(msg, MsgText)
   end
   end
   end
-  return sendMsg(msg.chat_id_,msg.id_,MsgText[2]..":"..get_weather)
+  return sendMsg(msg.chat_id_,msg.id_,MsgText[2]..":")
 end
 
 return {
