@@ -2,7 +2,7 @@
 local function get_weather(location)
   print("Finding weather in ", location)
   location = location:gsub(" ","+")
-  local url = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric".."&appid=bd82977b86bf27fb59a04b61b657fb6f"
+  local url = "http://api.openweathermap.org/data/2.5/weather?q="..location.."&units=metric&appid=bd82977b86bf27fb59a04b61b657fb6f"
 
   local b, c = http.request(url)
   if c ~= 200 then return nil end
@@ -40,7 +40,7 @@ local function weather(msg, MsgText)
   end
   end
   end
-  return sendMsg(msg.chat_id_,msg.id_,MsgText[2]..":")
+  return sendMsg(msg.chat_id_,msg.id_,get_weather)
 end
 
 return {
