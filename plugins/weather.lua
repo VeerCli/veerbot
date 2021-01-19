@@ -6,10 +6,7 @@ local function get_weather(location)
 
   local url, res = http.request(urlw)
   print("\nurl : "..url.."\nres : "..res)
-  if res ~= 200 then
-  print("Error")
-  return "Error"
-  end
+  if res == 200 then
   local weather = JSON.decode(url)
   print("\nweather : "..JSON.encode(weather))
   local city = weather.name
@@ -29,8 +26,11 @@ local function get_weather(location)
   elseif weather.weather[1].main == 'Thunderstorm' then
     conditions = conditions .. ' ☔☔☔☔'
   end
-
   return temp .. '\n' .. conditions
+else
+  print("Error")
+  return "Error"
+end
 end
 
 local function weather(msg, MsgText)
